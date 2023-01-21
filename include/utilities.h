@@ -20,6 +20,8 @@ extern "C"
 #include <Windows.h>
 #endif
 
-
+#ifndef OS
+#define OS(OS_TYPE, OS_ARCH)
+#endif
 
 #endif
