@@ -7,8 +7,6 @@
 #include <string>
 #include <utility>
 
-/* CROSS COMP STUFF FOR THE COMPILER */
-
 #ifdef __cplusplus
 extern "C"
 {
@@ -22,6 +20,23 @@ extern "C"
 
 #ifndef OS
 #define OS(OS_TYPE, OS_ARCH)
+#endif
+
+#ifndef DYLIB_MAIN
+#define DYLIB_MAIN
+
+typedef struct
+{
+	static const char* PREFIX;
+	static const char* SUFFIX;
+	static const bool ADD_FILE_NAME_DECOR = true;
+	static const bool NO_FILE_NAME_DECOR = false;
+
+} FILE_COMPS;
+
+#define NATIVE_HANDLER OS(HINSTANCE, void* this);
+#define NATIVE_SYMBOL OS(FARPROC, void* this);
+
 #endif
 
 #endif
