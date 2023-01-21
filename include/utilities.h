@@ -9,12 +9,6 @@
 
 /* CROSS COMP STUFF FOR THE COMPILER */
 
-#ifdef __cplusplus
-extern "C"
-{
-}
-#endif
-
 #if (defined(_WIN32) || defined(_WIN64))
 #define WIN_32_LEAN_AND_MEAN
 
