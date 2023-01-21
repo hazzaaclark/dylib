@@ -5,6 +5,7 @@
 
 #include <filesystem>
 #include <string>
+#include <stdexcept>
 #include <utility>
 
 #ifdef __cplusplus
@@ -19,7 +20,7 @@ extern "C"
 #endif
 
 #ifndef OS
-#define OS(OS_TYPE, OS_ARCH)
+#define OS
 #endif
 
 #ifndef DYLIB_MAIN
@@ -34,8 +35,9 @@ typedef struct
 
 } FILE_COMPS;
 
-#define NATIVE_HANDLER OS(HINSTANCE, void* this);
-#define NATIVE_SYMBOL OS(FARPROC, void* this);
+typedef struct ARG_EXCEPTION;
+typedef struct LOAD_ARG;
+typedef struct ARG_SYMBOL; 
 
 #endif
 
